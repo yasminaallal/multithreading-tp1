@@ -8,5 +8,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - run: uv run pre-commit run -a
-      - run: uv run python -m unittest
+    - name: Install uv
+      uses: astral-sh/setup-uv@v3
+    - run: uv run pre-commit run -a
+    - run: uv run python -m unittest
