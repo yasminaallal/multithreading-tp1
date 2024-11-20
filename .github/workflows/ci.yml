@@ -1,0 +1,12 @@
+name: CI
+
+on:
+  push:
+
+jobs:
+  check-and-test:
+    runs-on: macos-latest
+
+    steps:
+      - run: uv run pre-commit run -a
+      - run: uv run python -m unittest
