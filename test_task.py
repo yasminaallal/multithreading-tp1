@@ -15,6 +15,11 @@ class TestTask(unittest.TestCase):
             atol=1e-8,
             err_msg="The solution does not satisfy A * x = b",
         )
+    def test_json_serialization(self):
+            a = Task(identifier=42, size=10) 
+            txt = Task.to_json(a) 
+            b = Task.from_json(txt)
+            self.assertEqual(a, b, "The deserialized Task is not equal to the original.")
 
 
 if __name__ == "__main__":
