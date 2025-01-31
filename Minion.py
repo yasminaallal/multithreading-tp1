@@ -25,5 +25,4 @@ if __name__ == "__main__":
     AUTHKEY = b'secret'
 
     client = Minion(HOST, PORT, AUTHKEY)
-    client.connect_to_server()
     client.execute()

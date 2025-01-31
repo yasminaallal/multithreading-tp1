@@ -29,5 +29,4 @@ if __name__ == "__main__":
     AUTHKEY = b'secret'
 
     client = Boss(HOST, PORT, AUTHKEY, num_tasks=5)
-    client.connect_to_server()
     client.execute()

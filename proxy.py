@@ -10,7 +10,7 @@ from task import Task
 
 class Proxy(BaseHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
-        self.client = QueueClient()
+        self.client = QueueClient('127.0.0.1',5000, b'secret')
         super().__init__(*args, **kwargs)
 
     def do_GET(self):
