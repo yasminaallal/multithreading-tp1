@@ -1,8 +1,8 @@
-import task
 from QueueManager import QueueClient
-# task_queue . get 
-# task_queue . put 
+# task_queue . get
+# task_queue . put
 # recupere des accesseurs pour acceder a taskqueue
+
 
 class Minion(QueueClient):
     def __init__(self, host, port, authkey):
@@ -18,11 +18,12 @@ class Minion(QueueClient):
             task.work()
             print(f"Minion: Completed {task}")
             self.result_queue.put(task)
-            
+
+
 if __name__ == "__main__":
-    HOST = '127.0.0.1'
+    HOST = "127.0.0.1"
     PORT = 5000
-    AUTHKEY = b'secret'
+    AUTHKEY = b"secret"
 
     client = Minion(HOST, PORT, AUTHKEY)
     client.execute()

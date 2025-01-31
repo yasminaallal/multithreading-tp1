@@ -1,19 +1,19 @@
 from multiprocessing.managers import BaseManager
 from queue import Queue
-import sys
 
 #  herite base manager
-#  ouvrie un server sur le port avec mot de passe 
-#  fourni des accesseur aux task queue et result queue 
+#  ouvrie un server sur le port avec mot de passe
+#  fourni des accesseur aux task queue et result queue
+
 
 class QueueManager(BaseManager):
     pass
 
 
 if __name__ == "__main__":
-    HOST = '127.0.0.1'
+    HOST = "127.0.0.1"
     PORT = 5000
-    AUTHKEY = b'secret'
+    AUTHKEY = b"secret"
 
     task_queue = Queue()
     result_queue = Queue()
@@ -26,13 +26,14 @@ if __name__ == "__main__":
     print(f"Server started on {HOST}:{PORT}")
     server.serve_forever()
 
-#  Queue Client 
+#  Queue Client
 
 #  travail se connecter aux serveurs partage port et mdp avec Queue MAneger
 # lance serveur ouvre port et on attend
 
+
 class QueueClient:
-    def __init__(self,host,port,authkey):
+    def __init__(self, host, port, authkey):
         QueueManager.register("get_task_queue")
         QueueManager.register("get_result_queue")
         manager = QueueManager(address=(host, port), authkey=authkey)
