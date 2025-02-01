@@ -1,4 +1,4 @@
-# TP Réalisé par Allal Yasmine
+# TP Réalisé par Yasmine ALLAL et Mahé GRANDISSON
 
 ## Résultats de la résolution d'équations
 
